@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 
 namespace Inheritance
 {
@@ -29,11 +30,35 @@ namespace Inheritance
              * Creatively display the class member values 
              */
 
+            var robin = new Bird();
+            robin.CanFly = true;
+            robin.Migrate = true;
+            robin.BeakLength = 1;
+            robin.WingColor = "Brown";
+
+
             /*Create an object of your Reptile class
              *  give values to your members using the object of your Reptile class
              *  
              * Creatively display the class member values 
              */
+            var lizzard = new Reptile();
+            lizzard.IsScaly = true;
+            lizzard.IsColdBlooded = true;
+            lizzard.Habitat = "Desert";
+            lizzard.CanRegenerateTail = true;
+
+            var animals = new Animal[] { robin, lizzard };
+
+            foreach(var animal in animals)
+            {
+                Console.WriteLine($"this animal is alive {animal.IsAlive}");
+                Console.WriteLine($"this animal is {animal.Age} years old");
+                Console.WriteLine($" this animal has {animal.LegCount} legs");
+                Console.WriteLine($"this animal prefers the {animal.LandSeaAir}");
+                Console.WriteLine("");
+            }
+            Console.WriteLine($"{lizzard.IsScaly}, {lizzard.LegCount}, {lizzard.Habitat}, {lizzard.CanRegenerateTail}");
         }
     }
 }
